@@ -1,33 +1,14 @@
 #pragma warning(disable:4828)
 
-#include <QtCore>
-#include <iostream>
-#include <memory>
-#include <boost/asio.hpp>
-#include <spdlog/spdlog.h>
+#include "pch.h"
 
-/*
-class Logger 
-{
-public:
-    static std::shared_ptr<spdlog::logger> logger;
+std::shared_ptr<spdlog::logger> Logger::logger;
 
-    static void init()
-    {
-        logger = std::make_shared<spdlog::logger>("Server");
-    }
-
-    static std::shared_ptr<spdlog::logger>& getLogger() 
-    {
-        return logger;
-    }
-};
-*/
 int main(int argc, char** argv)
 {
-    //Logger::init();
-    
-    //Logger::getLogger()->info("Server is active!");
+    Logger::init("Omega-Server");
+
+    Logger::Info("Server is active!");
 
     boost::asio::io_context ioContext;
     unsigned short port = 8080;
@@ -35,6 +16,8 @@ int main(int argc, char** argv)
     //server.startAccepting();
 
     ioContext.run();
+
+    std::system("pause");
 
 	return 0;
 }
