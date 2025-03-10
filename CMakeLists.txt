@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)  # Отключает нестандартные расширения компилятора
 
-list(APPEND CMAKE_PREFIX_PATH "C:/Program Files/boost/boost_1_87_0/stage/lib/cmake/Boost-1.87.0")
-list(APPEND CMAKE_PREFIX_PATH "C:/Program Files/boost/boost_1_87_0")
+list(APPEND CMAKE_PREFIX_PATH "C:/libs/boost_1_87_0/stage/lib/cmake/Boost-1.87.0")
+list(APPEND CMAKE_PREFIX_PATH "C:/libs/boost_1_87_0")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
@@ -59,6 +59,7 @@ target_link_libraries(Omega-Bank-Server PRIVATE
 	spdlog::spdlog
 	Boost::system
 	Boost::thread
+	PostgreSQL::PostgreSQL
 )
 
 source_group(TREE "${CMAKE_SOURCE_DIR}" FILES ${SOURCES})

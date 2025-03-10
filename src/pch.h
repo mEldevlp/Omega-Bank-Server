@@ -3,8 +3,11 @@
 
 #include <iostream>
 #include <memory>
+
 #include <boost/asio.hpp>
 #include <spdlog/spdlog.h>
+
+#include <libpq-fe.h>
 
 #include "infrastructure/logging/Logger.h"
 #include "infrastructure/database/BankSystem.h"

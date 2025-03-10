@@ -21,6 +21,16 @@ public:
         logger->info(msg);
     }
 
+    static void Critical(const std::string& msg)
+    {
+        logger->critical(msg);
+    }
+
+    static void Error(const std::string& msg)
+    {
+        logger->error(msg);
+    }
+
     static std::shared_ptr<spdlog::logger>& getLogger() 
     {
         return logger;
